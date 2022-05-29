@@ -6,41 +6,21 @@
 #define LOGOWL_UTILS_H
 
 #include <string>
+#include <vector>
 
 namespace moghya {
-    enum class OwlType {
-        kLOG = 1,
-    };
-
-    enum class ServiceType {
-        kHTTP = 0
-    };
-
-    enum class DataSourceType {
-        kFILE = 0,
-        kSTDIN = 1,
-        kNETWORK = 2,
-    };
-
-    enum class DataSourceFormatType {
-        kCSV = 0,
-    };
-
-    struct OwlConfig {
-        OwlConfig(OwlType owlType,
-                  ServiceType serviceType,
-                  DataSourceType dataSourceType,
-                  DataSourceFormatType dataSourceFormatType,
-                  const std::string &dataSourceFilePath,
-                  bool listenCommands);
-        OwlType owlType;
-        ServiceType serviceType;
-        DataSourceType dataSourceType;
-        DataSourceFormatType dataSourceFormatType;
-        std::string dataSourceFilePath;
-        bool listenCommands;
-    };
-
+    static void SplitString(std::string str,
+                            std::string delimeter,
+                            std::vector<std::string>& result ) {
+        result.clear();
+        size_t pos = 0;
+        while ((pos = str.find(delimeter)) != std::string::npos) {
+            std::string token = str.substr(0, pos);
+            if (token.length() > 0) result.push_back(token);
+            str.erase(0, pos + delimeter.length());
+        }
+        if (str.length() > 0) result.push_back(str);
+    }
 }
 
 #endif //LOGOWL_UTILS_H

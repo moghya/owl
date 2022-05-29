@@ -1,0 +1,7 @@
+cmake_minimum_required(VERSION 3.20)
+project(logowl)
+
+set(CMAKE_CXX_STANDARD 20)
+
+add_executable(my_http_log_monitor_tester my_http_log_monitor_tester.cpp)
+target_link_libraries(my_http_log_monitor_tester my_http_log_monitor_lib)

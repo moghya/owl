@@ -7,20 +7,30 @@
 
 #include<iostream>
 
-#include "utils.h"
-#include "alert.h"
+#include "../utils.h"
+#include "../alert/alert.h"
 
 namespace moghya {
+
+    class OwlConfig {
+        public:
+            OwlConfig(bool listenCommands) :
+                    listenCommands(listenCommands){
+            }
+            bool listenCommands;
+    };
+
     class Owl {
         public:
-            Owl(const OwlConfig& options) {
+            Owl(OwlConfig& options) :
+                m_listenCommands(options.listenCommands){
             }
-            ~Owl() {
+            virtual ~Owl() {
             }
 
         public:
             virtual void Start() {
-                std::cout << OwlInfo() << "\n";
+                std::cout << Info() << "\n";
                 if (m_listenCommands) {
                     ListenCommands();
                 }
@@ -30,16 +40,12 @@ namespace moghya {
             }
 
         protected:
-            virtual std::string OwlInfo() = 0;
+            virtual std::string Info() = 0;
             virtual bool Observe() = 0;
-            virtual bool Reconfigure() {
-                return true;
-            }
             virtual bool ListenCommands() {
                 // TODO(moghya): start a server on another thread to read control commands
                 return true;
             }
-            virtual bool GenerateAlert(Alert& alert) = 0;
 
         private:
             bool m_listenCommands;
