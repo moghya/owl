@@ -2,6 +2,9 @@
 // Created by Shubham Sawant on 28/05/22.
 //
 
+#include <cassert>
+#include <memory>
+
 #include "report_http_stats_rule.h"
 #include "traffic_period_threshold_rule.h"
 

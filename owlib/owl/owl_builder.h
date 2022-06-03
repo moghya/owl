@@ -5,6 +5,8 @@
 #ifndef LOGOWL_OWL_BUILDER_H
 #define LOGOWL_OWL_BUILDER_H
 
+#include<memory>
+
 #include "logowl.h"
 #include "../utils.h"
 #include "../parser/log_parser.h"

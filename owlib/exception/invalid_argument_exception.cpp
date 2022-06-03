@@ -6,11 +6,9 @@
 
 namespace moghya {
     InvalidArgumentException::InvalidArgumentException(const std::string msg)
-            : runtime_error(msg) {
-
+            : std::runtime_error(msg.c_str()) {
     }
     InvalidArgumentException::~InvalidArgumentException() {
-
     }
 }
 

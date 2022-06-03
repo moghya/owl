@@ -2,7 +2,8 @@
 // Created by Shubham Sawant on 27/05/22.
 //
 
-#include "../exception/invalid_argument_exception.h"
+#include <memory>
+
 #include "owl_builder.h"
 
 namespace moghya {

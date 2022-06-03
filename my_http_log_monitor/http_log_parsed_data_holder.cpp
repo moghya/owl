@@ -2,6 +2,7 @@
 // Created by Shubham Sawant on 29/05/22.
 //
 
+#include <cassert>
 #include "http_log_parsed_data_holder.h"
 
 namespace my {

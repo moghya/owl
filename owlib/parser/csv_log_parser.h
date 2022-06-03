@@ -5,6 +5,7 @@
 #ifndef LOGOWL_CSV_LOG_PARSER_H
 #define LOGOWL_CSV_LOG_PARSER_H
 
+#include <cassert>
 #include <map>
 #include <string>
 #include <vector>
@@ -31,7 +32,9 @@ namespace moghya {
                  LogParser(parsedCSVLogDataPtr) {
                 assert(m_parsedCSVLogDataPtr);
             }
-            ~CSVLogParser() {}
+            ~CSVLogParser() {
+                if(m_parsedCSVLogDataPtr) delete m_parsedCSVLogDataPtr;
+            }
 
             ParsedLogDataHolder* ParseLogLine(const std::string &logLine) override;
 

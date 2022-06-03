@@ -6,7 +6,9 @@
 #define LOGOWL_LOGOWL_H
 
 #include<fstream>
+#include<memory>
 #include<string>
+
 
 #include "../utils.h"
 #include "../parser/log_parser.h"

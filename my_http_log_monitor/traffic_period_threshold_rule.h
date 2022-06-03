@@ -21,7 +21,9 @@ namespace my {
                 m_isThresholdHit(false),
                 ProcessLogRule() {
             }
-            ~TrafficPeriodThresholdRule() {}
+            ~TrafficPeriodThresholdRule() {
+                m_requestTimesFreqMap.clear();
+            }
             void Apply(moghya::ParsedLogDataHolder* parsedLogDataPtr) override;
         private:
             int m_trafficPeriodSeconds;

@@ -2,6 +2,8 @@
 // Created by Shubham Sawant on 29/05/22.
 //
 
+#include <cassert>
+
 #include "file_log_reader.h"
 
 namespace moghya {
@@ -16,6 +18,9 @@ namespace moghya {
     }
 
     FileLogReader::~FileLogReader() {
+        if (m_logInputStream.is_open()) {
+            m_logInputStream.close();
+        }
     }
 
     bool FileLogReader::ReadLogLine(std::string& logLine) {
