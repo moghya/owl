@@ -2,6 +2,8 @@
 // Created by Shubham Sawant on 29/05/22.
 //
 
+#include <cassert>
+
 #include "report_http_stats_rule.h"
 
 namespace my {

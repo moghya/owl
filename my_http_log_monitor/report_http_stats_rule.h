@@ -20,6 +20,8 @@ namespace my {
                 ProcessLogRule() {
             }
             ~ReportHTTPStatsRule() {
+                m_remoteHitCountMap.clear();
+                remoteSiteSectionSetMap.clear();
             }
             void Apply(moghya::ParsedLogDataHolder* parsedLogDataPtr) override;
 

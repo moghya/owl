@@ -2,6 +2,7 @@
 // Created by Shubham Sawant on 29/05/22.
 //
 
+#include <cassert>
 #include <map>
 #include <numeric>
 #include "traffic_period_threshold_rule.h"

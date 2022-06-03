@@ -5,7 +5,7 @@
 #ifndef LOGOWL_INVALID_ARGUMENT_EXCEPTION_H
 #define LOGOWL_INVALID_ARGUMENT_EXCEPTION_H
 
-#include<exception>
+#include<stdexcept>
 #include<string>
 
 namespace moghya {

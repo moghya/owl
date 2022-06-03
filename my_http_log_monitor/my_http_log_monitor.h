@@ -5,6 +5,7 @@
 #ifndef LOGOWL_MY_HTTP_LOG_MONITOR_H
 #define LOGOWL_MY_HTTP_LOG_MONITOR_H
 
+#include <memory>
 #include <string>
 
 #include "../owlib/parser/csv_log_parser.h"
@@ -24,10 +25,12 @@ namespace my {
             ~MyHTTPLogMonitor();
 
             void Start() {
-                m_httpLogOwl->Start();
+               assert(m_httpLogOwl);
+               m_httpLogOwl->Start();
             }
 
             void Stop() {
+                assert(m_httpLogOwl);
                 m_httpLogOwl->Stop();
             }
 

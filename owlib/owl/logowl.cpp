@@ -19,7 +19,10 @@ namespace moghya {
     }
 
     LogOwl::~LogOwl() {
-
+        for(auto rule : m_processLogRules) {
+            if(rule) delete rule;
+        }
+        m_processLogRules.clear();
     }
 
     bool LogOwl::Observe() {

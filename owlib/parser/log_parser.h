@@ -5,7 +5,7 @@
 #ifndef LOGOWL_LOG_PARSER_H
 #define LOGOWL_LOG_PARSER_H
 
-
+#include <cassert>
 #include <map>
 #include <vector>
 
@@ -14,7 +14,7 @@
 namespace moghya {
     class ParsedLogDataHolder {
         public:
-            ~ParsedLogDataHolder();
+            virtual ~ParsedLogDataHolder() {}
             virtual void Initialize() = 0;
     };
     class LogParser {
@@ -23,7 +23,8 @@ namespace moghya {
                 m_parsedLogDataPtr(parsedLogDataPtr) {
                 assert(parsedLogDataPtr);
             }
-            virtual ~LogParser() {}
+            virtual ~LogParser() {
+            }
             virtual ParsedLogDataHolder* ParseLogLine(const std::string& logLine) = 0;
         private:
             ParsedLogDataHolder* m_parsedLogDataPtr;
