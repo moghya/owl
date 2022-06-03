@@ -5,8 +5,8 @@
 #ifndef LOGOWL_INVALID_ARGUMENT_EXCEPTION_H
 #define LOGOWL_INVALID_ARGUMENT_EXCEPTION_H
 
-#include<stdexcept>
-#include<string>
+#include <stdexcept>
+#include <string>
 
 namespace moghya {
     class InvalidArgumentException : public std::runtime_error {
@@ -16,6 +16,6 @@ namespace moghya {
         ~InvalidArgumentException();
     };
 
-}
+}// namespace moghya
 
-#endif //LOGOWL_INVALID_ARGUMENT_EXCEPTION_H
+#endif//LOGOWL_INVALID_ARGUMENT_EXCEPTION_H

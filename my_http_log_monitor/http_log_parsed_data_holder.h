@@ -10,11 +10,12 @@
 namespace my {
     class HTTPLogParsedDataHolder : public moghya::CSVLogParsedDataHolder {
     public:
-        void Initialize(std::vector<std::string>& values) override;
+        void Initialize(std::vector<std::string> &values) override;
         HTTPLogParsedDataHolder() {
         }
         ~HTTPLogParsedDataHolder() {
         }
+
     private:
         void ParseRequest();
 
@@ -32,7 +33,7 @@ namespace my {
         std::string section;
         std::string protocol;
     };
-}
+}// namespace my
 
 
-#endif //LOGOWL_HTTP_LOG_PARSED_DATA_HOLDER_H
+#endif//LOGOWL_HTTP_LOG_PARSED_DATA_HOLDER_H

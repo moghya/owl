@@ -9,11 +9,11 @@
 
 namespace moghya {
     class LogReader {
-        public:
-            LogReader() {}
-            virtual ~LogReader() {}
-            virtual bool ReadLogLine(std::string& line) = 0;
+    public:
+        LogReader() {}
+        virtual ~LogReader() {}
+        virtual bool ReadLogLine(std::string &line) = 0;
     };
-}
+}// namespace moghya
 
-#endif //LOGOWL_LOG_READER_H
+#endif//LOGOWL_LOG_READER_H

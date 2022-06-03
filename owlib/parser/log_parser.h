@@ -13,25 +13,23 @@
 
 namespace moghya {
     class ParsedLogDataHolder {
-        public:
-            virtual ~ParsedLogDataHolder() {}
-            virtual void Initialize() = 0;
+    public:
+        virtual ~ParsedLogDataHolder() {}
+        virtual void Initialize() = 0;
     };
     class LogParser {
-        public:
-            LogParser(ParsedLogDataHolder* parsedLogDataPtr):
-                m_parsedLogDataPtr(parsedLogDataPtr) {
-                assert(parsedLogDataPtr);
-            }
-            virtual ~LogParser() {
-            }
-            virtual ParsedLogDataHolder* ParseLogLine(const std::string& logLine) = 0;
-        private:
-            ParsedLogDataHolder* m_parsedLogDataPtr;
+    public:
+        LogParser(ParsedLogDataHolder *parsedLogDataPtr) : m_parsedLogDataPtr(parsedLogDataPtr) {
+            assert(parsedLogDataPtr);
+        }
+        virtual ~LogParser() {
+        }
+        virtual ParsedLogDataHolder *ParseLogLine(const std::string &logLine) = 0;
+
+    private:
+        ParsedLogDataHolder *m_parsedLogDataPtr;
     };
-}
+}// namespace moghya
 
 
-
-
-#endif //LOGOWL_LOG_PARSER_H
+#endif//LOGOWL_LOG_PARSER_H

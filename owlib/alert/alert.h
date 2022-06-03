@@ -7,12 +7,12 @@
 
 namespace moghya {
     class Alert {
-        public:
-            Alert() {}
-            ~Alert() {}
+    public:
+        Alert() {}
+        ~Alert() {}
     };
 
-}
+}// namespace moghya
 
 
-#endif //LOGOWL_ALERT_H
+#endif//LOGOWL_ALERT_H

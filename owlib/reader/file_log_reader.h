@@ -13,15 +13,16 @@
 
 namespace moghya {
     class FileLogReader : public LogReader {
-        public:
-            FileLogReader(std::string logFilePath);
-            ~FileLogReader();
-            bool ReadLogLine(std::string& logLine) override;
-        private:
-            std::string m_logFilePath;
-            std::ifstream m_logInputStream;
-            uint32_t m_readLineCount = 0;
-    };
-}
+    public:
+        FileLogReader(std::string logFilePath);
+        ~FileLogReader();
+        bool ReadLogLine(std::string &logLine) override;
 
-#endif //LOGOWL_FILE_LOG_READER_H
+    private:
+        std::string m_logFilePath;
+        std::ifstream m_logInputStream;
+        uint32_t m_readLineCount = 0;
+    };
+}// namespace moghya
+
+#endif//LOGOWL_FILE_LOG_READER_H
