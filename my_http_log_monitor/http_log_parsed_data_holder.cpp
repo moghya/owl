@@ -2,12 +2,12 @@
 // Created by Shubham Sawant on 29/05/22.
 //
 
-#include <cassert>
 #include "http_log_parsed_data_holder.h"
+#include <cassert>
 
 namespace my {
 
-    void HTTPLogParsedDataHolder::Initialize(std::vector<std::string>& values) {
+    void HTTPLogParsedDataHolder::Initialize(std::vector<std::string> &values) {
         int idx = 0;
         remote = values[idx++];
         rfc931 = values[idx++];
@@ -31,4 +31,4 @@ namespace my {
         moghya::SplitString(uri, "/", uriParts);
         section = uriParts[0];
     }
-}
+}// namespace my

@@ -13,24 +13,24 @@
 namespace my {
 
     class TrafficPeriodThresholdRule : public moghya::ProcessLogRule {
-        public:
-            TrafficPeriodThresholdRule(int trafficPeriodSeconds,
-                                       int trafficThresholdPerSeconds) :
-                m_trafficPeriodSeconds(trafficPeriodSeconds),
-                m_trafficThresholdPerSeconds(trafficThresholdPerSeconds),
-                m_isThresholdHit(false),
-                ProcessLogRule() {
-            }
-            ~TrafficPeriodThresholdRule() {
-                m_requestTimesFreqMap.clear();
-            }
-            void Apply(moghya::ParsedLogDataHolder* parsedLogDataPtr) override;
-        private:
-            int m_trafficPeriodSeconds;
-            int m_trafficThresholdPerSeconds;
-            bool m_isThresholdHit;
-            std::map<int,int> m_requestTimesFreqMap;
-    };
-}
+    public:
+        TrafficPeriodThresholdRule(int trafficPeriodSeconds,
+                                   int trafficThresholdPerSeconds) : m_trafficPeriodSeconds(trafficPeriodSeconds),
+                                                                     m_trafficThresholdPerSeconds(trafficThresholdPerSeconds),
+                                                                     m_isThresholdHit(false),
+                                                                     ProcessLogRule() {
+        }
+        ~TrafficPeriodThresholdRule() {
+            m_requestTimesFreqMap.clear();
+        }
+        void Apply(moghya::ParsedLogDataHolder *parsedLogDataPtr) override;
 
-#endif //LOGOWL_TRAFFIC_CHECK_RULE_H
+    private:
+        int m_trafficPeriodSeconds;
+        int m_trafficThresholdPerSeconds;
+        bool m_isThresholdHit;
+        std::map<int, int> m_requestTimesFreqMap;
+    };
+}// namespace my
+
+#endif//LOGOWL_TRAFFIC_CHECK_RULE_H

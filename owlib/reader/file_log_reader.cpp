@@ -7,9 +7,8 @@
 #include "file_log_reader.h"
 
 namespace moghya {
-    FileLogReader::FileLogReader(std::string logFilePath) :
-        m_logFilePath(logFilePath),
-        LogReader() {
+    FileLogReader::FileLogReader(std::string logFilePath) : m_logFilePath(logFilePath),
+                                                            LogReader() {
         if (m_logFilePath.empty()) {
             throw InvalidArgumentException("LogFilePath not specified.");
         }
@@ -23,7 +22,7 @@ namespace moghya {
         }
     }
 
-    bool FileLogReader::ReadLogLine(std::string& logLine) {
+    bool FileLogReader::ReadLogLine(std::string &logLine) {
         assert(m_logInputStream.is_open());
         try {
             std::getline(m_logInputStream, logLine);
@@ -34,4 +33,4 @@ namespace moghya {
         }
         return true;
     }
-}
+}// namespace moghya

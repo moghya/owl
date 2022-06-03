@@ -5,20 +5,20 @@
 #ifndef LOGOWL_OWL_BUILDER_H
 #define LOGOWL_OWL_BUILDER_H
 
-#include<memory>
+#include <memory>
 
-#include "logowl.h"
-#include "../utils.h"
 #include "../parser/log_parser.h"
 #include "../rule/process_log_rule.h"
+#include "../utils.h"
+#include "logowl.h"
 
 namespace moghya {
     class OwlBuilder {
-        public:
-            static std::unique_ptr<moghya::LogOwl> BuildLogOwl(moghya::LogOwlConfig& options);
-            OwlBuilder() = delete;
-            ~OwlBuilder() = delete;
+    public:
+        static std::unique_ptr<moghya::LogOwl> BuildLogOwl(moghya::LogOwlConfig &options);
+        OwlBuilder() = delete;
+        ~OwlBuilder() = delete;
     };
-}
+}// namespace moghya
 
-#endif //LOGOWL_OWL_BUILDER_H
+#endif//LOGOWL_OWL_BUILDER_H

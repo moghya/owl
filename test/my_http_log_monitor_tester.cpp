@@ -3,9 +3,9 @@
 
 #include "../my_http_log_monitor/my_http_log_monitor.h"
 
-int main(int argc, char** argv) {
-    if (argc!=2) {
-        std::cout<< "Run with logFilePath as command line arg.";
+int main(int argc, char **argv) {
+    if (argc != 2) {
+        std::cout << "Run with logFilePath as command line arg.";
         return -1;
     }
     std::string logFilePath(argv[1]);
